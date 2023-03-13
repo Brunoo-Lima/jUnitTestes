@@ -1,5 +1,6 @@
 import org.example.Pessoa;
 import org.junit.jupiter.api.Assertions;
+//import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class Teste {
@@ -17,4 +18,22 @@ public class Teste {
         Pessoa pessoa1 = new Pessoa("Alessandra", 16);
         Assertions.assertFalse(pessoa1.MaiorIdade());
     }
+
+    @Test
+    void validarSeObjetoNulo() {
+        Pessoa person = null;
+        Assertions.assertNull(person);
+
+        person = new Pessoa("Lucas", 23);
+        Assertions.assertNotNull(person);
+    }
+
+    @Test
+    void validarNumerosTiposDiferentes() {
+        double valor = 5.0;
+        double outroValor = 5.0;
+
+        Assertions.assertEquals(valor, outroValor);
+    }
+
 }
